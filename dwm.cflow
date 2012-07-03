@@ -1,0 +1,651 @@
++-main() <int main (int argc, char *argv[]) at dwm.c:2170>
+  +-strcmp()
+  +-die() <void die (const char *errstr, ...) at dwm.c:696>
+  | +-va_start()
+  | +-vfprintf()
+  | +-va_end()
+  | \-exit()
+  +-setlocale()
+  +-XSupportsLocale()
+  +-fputs()
+  +-XOpenDisplay()
+  +-checkotherwm() <void checkotherwm (void) at dwm.c:469>
+  | +-xerrorxlib() <int (*xerrorxlib) (Display *, XErrorEvent *) at dwm.c:262>
+  | +-XSetErrorHandler()
+  | +-xerrorstart() <int xerrorstart (Display *dpy, XErrorEvent *ee) at dwm.c:2151>
+  | | \-die() <void die (const char *errstr, ...) at dwm.c:696>
+  | |   +-va_start()
+  | |   +-vfprintf()
+  | |   +-va_end()
+  | |   \-exit()
+  | +-XSelectInput()
+  | +-DefaultRootWindow()
+  | +-XSync()
+  | \-xerror() <int xerror (Display *dpy, XErrorEvent *ee) at dwm.c:2127>
+  |   +-fprintf()
+  |   \-xerrorxlib() <int (*xerrorxlib) (Display *, XErrorEvent *) at dwm.c:262>
+  +-setup() <void setup (void) at dwm.c:1602>
+  | +-sigchld() <void sigchld (int unused) at dwm.c:1678> (R)
+  | | +-signal()
+  | | +-sigchld() <void sigchld (int unused) at dwm.c:1678> (recursive: see 28)
+  | | +-die() <void die (const char *errstr, ...) at dwm.c:696>
+  | | | +-va_start()
+  | | | +-vfprintf()
+  | | | +-va_end()
+  | | | \-exit()
+  | | \-waitpid()
+  | +-DefaultScreen()
+  | +-RootWindow()
+  | +-initfont() <void initfont (const char *fontstr) at dwm.c:1041>
+  | | +-XCreateFontSet()
+  | | +-fprintf()
+  | | +-XFreeStringList()
+  | | +-XExtentsOfFontSet()
+  | | +-XFontsOfFontSet()
+  | | +-MAX()
+  | | +-XLoadQueryFont()
+  | | \-die() <void die (const char *errstr, ...) at dwm.c:696>
+  | |   +-va_start()
+  | |   +-vfprintf()
+  | |   +-va_end()
+  | |   \-exit()
+  | +-DisplayWidth()
+  | +-DisplayHeight()
+  | +-updategeom() <Bool updategeom (void) at dwm.c:1892>
+  | | +-XineramaIsActive()
+  | | +-XineramaQueryScreens()
+  | | +-malloc()
+  | | +-die() <void die (const char *errstr, ...) at dwm.c:696>
+  | | | +-va_start()
+  | | | +-vfprintf()
+  | | | +-va_end()
+  | | | \-exit()
+  | | +-isuniquegeom() <Bool isuniquegeom (XineramaScreenInfo *unique, size_t n, XineramaScreenInfo *info) at dwm.c:1076>
+  | | +-memcpy()
+  | | +-XFree()
+  | | +-createmon() <Monitor *createmon (void) at dwm.c:649>
+  | | | +-calloc()
+  | | | +-die() <void die (const char *errstr, ...) at dwm.c:696>
+  | | | | +-va_start()
+  | | | | +-vfprintf()
+  | | | | +-va_end()
+  | | | | \-exit()
+  | | | +-LENGTH()
+  | | | \-strncpy()
+  | | +-updatebarpos() <void updatebarpos (Monitor *m) at dwm.c:1866>
+  | | +-detachstack() <void detachstack (Client *c) at dwm.c:683>
+  | | | \-ISVISIBLE()
+  | | +-attach() <void attach (Client *c) at dwm.c:416>
+  | | +-attachstack() <void attachstack (Client *c) at dwm.c:422>
+  | | +-cleanupmon() <void cleanupmon (Monitor *mon) at dwm.c:507>
+  | | | +-XUnmapWindow()
+  | | | +-XDestroyWindow()
+  | | | \-free()
+  | | +-free()
+  | | \-wintomon() <Monitor *wintomon (Window w) at dwm.c:2108>
+  | |   +-getrootptr() <Bool getrootptr (int *x, int *y) at dwm.c:945>
+  | |   | \-XQueryPointer()
+  | |   +-recttomon() <Monitor *recttomon (int x, int y, int w, int h) at dwm.c:1343>
+  | |   | \-INTERSECT()
+  | |   \-wintoclient() <Client *wintoclient (Window w) at dwm.c:2096>
+  | +-XInternAtom()
+  | +-XCreateFontCursor()
+  | +-getcolor() <unsigned long getcolor (const char *colstr) at dwm.c:935>
+  | | +-DefaultColormap()
+  | | +-XAllocNamedColor()
+  | | \-die() <void die (const char *errstr, ...) at dwm.c:696>
+  | |   +-va_start()
+  | |   +-vfprintf()
+  | |   +-va_end()
+  | |   \-exit()
+  | +-XCreatePixmap()
+  | +-DefaultDepth()
+  | +-XCreateGC()
+  | +-XSetLineAttributes()
+  | +-XSetFont()
+  | +-updatebars() <void updatebars (void) at dwm.c:1847>
+  | | +-XCreateWindow()
+  | | +-DefaultDepth()
+  | | +-DefaultVisual()
+  | | +-XDefineCursor()
+  | | \-XMapRaised()
+  | +-updatestatus() <void updatestatus (void) at dwm.c:2047>
+  | | +-gettextprop() <Bool gettextprop (Window w, Atom atom, char *text, unsigned int size) at dwm.c:971>
+  | | | +-XGetTextProperty()
+  | | | +-strncpy()
+  | | | +-XmbTextPropertyToTextList()
+  | | | +-XFreeStringList()
+  | | | \-XFree()
+  | | +-strcpy()
+  | | \-drawbar() <void drawbar (Monitor *m) at dwm.c:721>
+  | |   +-LENGTH()
+  | |   +-TEXTW()
+  | |   +-drawtext() <void drawtext (const char *text, unsigned long col[ColLast], Bool invert) at dwm.c:791>
+  | |   | +-XSetForeground()
+  | |   | +-XFillRectangle()
+  | |   | +-strlen()
+  | |   | +-MIN()
+  | |   | +-textnw() <int textnw (const char *text, unsigned int len) at dwm.c:1714>
+  | |   | | +-XmbTextExtents()
+  | |   | | \-XTextWidth()
+  | |   | +-memcpy()
+  | |   | +-XmbDrawString()
+  | |   | \-XDrawString()
+  | |   +-drawsquare() <void drawsquare (Bool filled, Bool empty, Bool invert, unsigned long col[ColLast]) at dwm.c:779>
+  | |   | +-XSetForeground()
+  | |   | +-XFillRectangle()
+  | |   | \-XDrawRectangle()
+  | |   +-XCopyArea()
+  | |   \-XSync()
+  | +-XChangeProperty()
+  | +-XDeleteProperty()
+  | +-XChangeWindowAttributes()
+  | +-XSelectInput()
+  | \-grabkeys() <void grabkeys (void) at dwm.c:1018>
+  |   +-updatenumlockmask() <void updatenumlockmask (void) at dwm.c:1974>
+  |   | +-XGetModifierMapping()
+  |   | +-XKeysymToKeycode()
+  |   | \-XFreeModifiermap()
+  |   +-XUngrabKey()
+  |   +-LENGTH()
+  |   +-XKeysymToKeycode()
+  |   \-XGrabKey()
+  +-scan() <void scan (void) at dwm.c:1463>
+  | +-XQueryTree()
+  | +-XGetWindowAttributes()
+  | +-XGetTransientForHint()
+  | +-getstate() <long getstate (Window w) at dwm.c:954>
+  | | +-XGetWindowProperty()
+  | | \-XFree()
+  | +-manage() <void manage (Window w, XWindowAttributes *wa) at dwm.c:1116>
+  | | +-calloc()
+  | | +-die() <void die (const char *errstr, ...) at dwm.c:696>
+  | | | +-va_start()
+  | | | +-vfprintf()
+  | | | +-va_end()
+  | | | \-exit()
+  | | +-updatetitle() <void updatetitle (Client *c) at dwm.c:2039>
+  | | | +-gettextprop() <Bool gettextprop (Window w, Atom atom, char *text, unsigned int size) at dwm.c:971>
+  | | | | +-XGetTextProperty()
+  | | | | +-strncpy()
+  | | | | +-XmbTextPropertyToTextList()
+  | | | | +-XFreeStringList()
+  | | | | \-XFree()
+  | | | \-strcpy()
+  | | +-XGetTransientForHint()
+  | | +-wintoclient() <Client *wintoclient (Window w) at dwm.c:2096>
+  | | +-applyrules() <void applyrules (Client *c) at dwm.c:296>
+  | | | +-XGetClassHint()
+  | | | +-LENGTH()
+  | | | +-strstr()
+  | | | \-XFree()
+  | | +-WIDTH()
+  | | +-HEIGHT()
+  | | +-MAX()
+  | | +-XConfigureWindow()
+  | | +-XSetWindowBorder()
+  | | +-configure() <void configure (Client *c) at dwm.c:555>
+  | | | \-XSendEvent()
+  | | +-updatewindowtype() <void updatewindowtype (Client *c) at dwm.c:2055>
+  | | | +-getatomprop() <Atom getatomprop (Client *c, Atom prop) at dwm.c:920>
+  | | | | +-XGetWindowProperty()
+  | | | | \-XFree()
+  | | | \-setfullscreen() <void setfullscreen (Client *c, Bool fullscreen) at dwm.c:1547>
+  | | |   +-XChangeProperty()
+  | | |   +-resizeclient() <void resizeclient (Client *c, int x, int y, int w, int h) at dwm.c:1362>
+  | | |   | +-XConfigureWindow()
+  | | |   | +-configure() <void configure (Client *c) at dwm.c:555>
+  | | |   | | \-XSendEvent()
+  | | |   | \-XSync()
+  | | |   +-XRaiseWindow()
+  | | |   \-arrange() <void arrange (Monitor *m) at dwm.c:396> (R)
+  | | |     +-showhide() <void showhide (Client *c) at dwm.c:1662> (R)
+  | | |     | +-ISVISIBLE()
+  | | |     | +-XMoveWindow()
+  | | |     | +-arrange() <void arrange (Monitor *m) at dwm.c:396> (recursive: see 201)
+  | | |     | +-resize() <void resize (Client *c, int x, int y, int w, int h, Bool interact) at dwm.c:1356> (R)
+  | | |     | | +-applysizehints() <Bool applysizehints (Client *c, int *x, int *y, int *w, int *h, Bool interact) at dwm.c:330> (R)
+  | | |     | | | +-MAX()
+  | | |     | | | +-WIDTH()
+  | | |     | | | +-HEIGHT()
+  | | |     | | | +-arrange() <void arrange (Monitor *m) at dwm.c:396> (recursive: see 201)
+  | | |     | | | \-MIN()
+  | | |     | | \-resizeclient() <void resizeclient (Client *c, int x, int y, int w, int h) at dwm.c:1362>
+  | | |     | |   +-XConfigureWindow()
+  | | |     | |   +-configure() <void configure (Client *c) at dwm.c:555>
+  | | |     | |   | \-XSendEvent()
+  | | |     | |   \-XSync()
+  | | |     | +-showhide() <void showhide (Client *c) at dwm.c:1662> (recursive: see 202)
+  | | |     | \-WIDTH()
+  | | |     +-arrangemon() <void arrangemon (Monitor *m) at dwm.c:409> (R)
+  | | |     | +-strncpy()
+  | | |     | \-arrange() <void arrange (Monitor *m) at dwm.c:396> (recursive: see 201)
+  | | |     \-restack() <void restack (Monitor *m) at dwm.c:1429> (R)
+  | | |       +-drawbar() <void drawbar (Monitor *m) at dwm.c:721>
+  | | |       | +-LENGTH()
+  | | |       | +-TEXTW()
+  | | |       | +-drawtext() <void drawtext (const char *text, unsigned long col[ColLast], Bool invert) at dwm.c:791>
+  | | |       | | +-XSetForeground()
+  | | |       | | +-XFillRectangle()
+  | | |       | | +-strlen()
+  | | |       | | +-MIN()
+  | | |       | | +-textnw() <int textnw (const char *text, unsigned int len) at dwm.c:1714>
+  | | |       | | | +-XmbTextExtents()
+  | | |       | | | \-XTextWidth()
+  | | |       | | +-memcpy()
+  | | |       | | +-XmbDrawString()
+  | | |       | | \-XDrawString()
+  | | |       | +-drawsquare() <void drawsquare (Bool filled, Bool empty, Bool invert, unsigned long col[ColLast]) at dwm.c:779>
+  | | |       | | +-XSetForeground()
+  | | |       | | +-XFillRectangle()
+  | | |       | | \-XDrawRectangle()
+  | | |       | +-XCopyArea()
+  | | |       | \-XSync()
+  | | |       +-arrange() <void arrange (Monitor *m) at dwm.c:396> (recursive: see 201)
+  | | |       +-XRaiseWindow()
+  | | |       +-ISVISIBLE()
+  | | |       +-XConfigureWindow()
+  | | |       +-XSync()
+  | | |       \-XCheckMaskEvent()
+  | | +-updatesizehints() <void updatesizehints (Client *c) at dwm.c:1989>
+  | | | \-XGetWMNormalHints()
+  | | +-updatewmhints() <void updatewmhints (Client *c) at dwm.c:2066>
+  | | | +-XGetWMHints()
+  | | | +-XSetWMHints()
+  | | | \-XFree()
+  | | +-XSelectInput()
+  | | +-grabbuttons() <void grabbuttons (Client *c, Bool focused) at dwm.c:996>
+  | | | +-updatenumlockmask() <void updatenumlockmask (void) at dwm.c:1974>
+  | | | | +-XGetModifierMapping()
+  | | | | +-XKeysymToKeycode()
+  | | | | \-XFreeModifiermap()
+  | | | +-XUngrabButton()
+  | | | +-LENGTH()
+  | | | \-XGrabButton()
+  | | +-XRaiseWindow()
+  | | +-attach() <void attach (Client *c) at dwm.c:416>
+  | | +-attachstack() <void attachstack (Client *c) at dwm.c:422>
+  | | +-XChangeProperty()
+  | | +-XMoveResizeWindow()
+  | | +-setclientstate() <void setclientstate (Client *c, long state) at dwm.c:1504>
+  | | | \-XChangeProperty()
+  | | +-unfocus() <void unfocus (Client *c, Bool setfocus) at dwm.c:1797>
+  | | | +-grabbuttons() <void grabbuttons (Client *c, Bool focused) at dwm.c:996>
+  | | | | +-updatenumlockmask() <void updatenumlockmask (void) at dwm.c:1974>
+  | | | | | +-XGetModifierMapping()
+  | | | | | +-XKeysymToKeycode()
+  | | | | | \-XFreeModifiermap()
+  | | | | +-XUngrabButton()
+  | | | | +-LENGTH()
+  | | | | \-XGrabButton()
+  | | | +-XSetWindowBorder()
+  | | | +-XSetInputFocus()
+  | | | \-XDeleteProperty()
+  | | +-arrange() <void arrange (Monitor *m) at dwm.c:396> (R)
+  | | | +-showhide() <void showhide (Client *c) at dwm.c:1662> (R)
+  | | | | +-ISVISIBLE()
+  | | | | +-XMoveWindow()
+  | | | | +-arrange() <void arrange (Monitor *m) at dwm.c:396> (recursive: see 284)
+  | | | | +-resize() <void resize (Client *c, int x, int y, int w, int h, Bool interact) at dwm.c:1356> (R)
+  | | | | | +-applysizehints() <Bool applysizehints (Client *c, int *x, int *y, int *w, int *h, Bool interact) at dwm.c:330> (R)
+  | | | | | | +-MAX()
+  | | | | | | +-WIDTH()
+  | | | | | | +-HEIGHT()
+  | | | | | | +-arrange() <void arrange (Monitor *m) at dwm.c:396> (recursive: see 284)
+  | | | | | | \-MIN()
+  | | | | | \-resizeclient() <void resizeclient (Client *c, int x, int y, int w, int h) at dwm.c:1362>
+  | | | | |   +-XConfigureWindow()
+  | | | | |   +-configure() <void configure (Client *c) at dwm.c:555>
+  | | | | |   | \-XSendEvent()
+  | | | | |   \-XSync()
+  | | | | +-showhide() <void showhide (Client *c) at dwm.c:1662> (recursive: see 285)
+  | | | | \-WIDTH()
+  | | | +-arrangemon() <void arrangemon (Monitor *m) at dwm.c:409> (R)
+  | | | | +-strncpy()
+  | | | | \-arrange() <void arrange (Monitor *m) at dwm.c:396> (recursive: see 284)
+  | | | \-restack() <void restack (Monitor *m) at dwm.c:1429> (R)
+  | | |   +-drawbar() <void drawbar (Monitor *m) at dwm.c:721>
+  | | |   | +-LENGTH()
+  | | |   | +-TEXTW()
+  | | |   | +-drawtext() <void drawtext (const char *text, unsigned long col[ColLast], Bool invert) at dwm.c:791>
+  | | |   | | +-XSetForeground()
+  | | |   | | +-XFillRectangle()
+  | | |   | | +-strlen()
+  | | |   | | +-MIN()
+  | | |   | | +-textnw() <int textnw (const char *text, unsigned int len) at dwm.c:1714>
+  | | |   | | | +-XmbTextExtents()
+  | | |   | | | \-XTextWidth()
+  | | |   | | +-memcpy()
+  | | |   | | +-XmbDrawString()
+  | | |   | | \-XDrawString()
+  | | |   | +-drawsquare() <void drawsquare (Bool filled, Bool empty, Bool invert, unsigned long col[ColLast]) at dwm.c:779>
+  | | |   | | +-XSetForeground()
+  | | |   | | +-XFillRectangle()
+  | | |   | | \-XDrawRectangle()
+  | | |   | +-XCopyArea()
+  | | |   | \-XSync()
+  | | |   +-arrange() <void arrange (Monitor *m) at dwm.c:396> (recursive: see 284)
+  | | |   +-XRaiseWindow()
+  | | |   +-ISVISIBLE()
+  | | |   +-XConfigureWindow()
+  | | |   +-XSync()
+  | | |   \-XCheckMaskEvent()
+  | | +-XMapWindow()
+  | | \-focus() <void focus (Client *c) at dwm.c:846>
+  | |   +-ISVISIBLE()
+  | |   +-unfocus() <void unfocus (Client *c, Bool setfocus) at dwm.c:1797>
+  | |   | +-grabbuttons() <void grabbuttons (Client *c, Bool focused) at dwm.c:996>
+  | |   | | +-updatenumlockmask() <void updatenumlockmask (void) at dwm.c:1974>
+  | |   | | | +-XGetModifierMapping()
+  | |   | | | +-XKeysymToKeycode()
+  | |   | | | \-XFreeModifiermap()
+  | |   | | +-XUngrabButton()
+  | |   | | +-LENGTH()
+  | |   | | \-XGrabButton()
+  | |   | +-XSetWindowBorder()
+  | |   | +-XSetInputFocus()
+  | |   | \-XDeleteProperty()
+  | |   +-clearurgent() <void clearurgent (Client *c) at dwm.c:522>
+  | |   | +-XGetWMHints()
+  | |   | +-XSetWMHints()
+  | |   | \-XFree()
+  | |   +-detachstack() <void detachstack (Client *c) at dwm.c:683>
+  | |   | \-ISVISIBLE()
+  | |   +-attachstack() <void attachstack (Client *c) at dwm.c:422>
+  | |   +-grabbuttons() <void grabbuttons (Client *c, Bool focused) at dwm.c:996>
+  | |   | +-updatenumlockmask() <void updatenumlockmask (void) at dwm.c:1974>
+  | |   | | +-XGetModifierMapping()
+  | |   | | +-XKeysymToKeycode()
+  | |   | | \-XFreeModifiermap()
+  | |   | +-XUngrabButton()
+  | |   | +-LENGTH()
+  | |   | \-XGrabButton()
+  | |   +-XSetWindowBorder()
+  | |   +-setfocus() <void setfocus (Client *c) at dwm.c:1536>
+  | |   | +-XSetInputFocus()
+  | |   | +-XChangeProperty()
+  | |   | \-sendevent() <Bool sendevent (Client *c, Atom proto) at dwm.c:1512>
+  | |   |   +-XGetWMProtocols()
+  | |   |   +-XFree()
+  | |   |   \-XSendEvent()
+  | |   +-XSetInputFocus()
+  | |   +-XDeleteProperty()
+  | |   \-drawbars() <void drawbars (void) at dwm.c:771>
+  | |     \-drawbar() <void drawbar (Monitor *m) at dwm.c:721>
+  | |       +-LENGTH()
+  | |       +-TEXTW()
+  | |       +-drawtext() <void drawtext (const char *text, unsigned long col[ColLast], Bool invert) at dwm.c:791>
+  | |       | +-XSetForeground()
+  | |       | +-XFillRectangle()
+  | |       | +-strlen()
+  | |       | +-MIN()
+  | |       | +-textnw() <int textnw (const char *text, unsigned int len) at dwm.c:1714>
+  | |       | | +-XmbTextExtents()
+  | |       | | \-XTextWidth()
+  | |       | +-memcpy()
+  | |       | +-XmbDrawString()
+  | |       | \-XDrawString()
+  | |       +-drawsquare() <void drawsquare (Bool filled, Bool empty, Bool invert, unsigned long col[ColLast]) at dwm.c:779>
+  | |       | +-XSetForeground()
+  | |       | +-XFillRectangle()
+  | |       | \-XDrawRectangle()
+  | |       +-XCopyArea()
+  | |       \-XSync()
+  | \-XFree()
+  +-run() <void run (void) at dwm.c:1453>
+  | +-XSync()
+  | \-XNextEvent()
+  +-cleanup() <void cleanup (void) at dwm.c:479>
+  | +-view() <void view (const Arg *arg) at dwm.c:2085>
+  | | +-focus() <void focus (Client *c) at dwm.c:846>
+  | | | +-ISVISIBLE()
+  | | | +-unfocus() <void unfocus (Client *c, Bool setfocus) at dwm.c:1797>
+  | | | | +-grabbuttons() <void grabbuttons (Client *c, Bool focused) at dwm.c:996>
+  | | | | | +-updatenumlockmask() <void updatenumlockmask (void) at dwm.c:1974>
+  | | | | | | +-XGetModifierMapping()
+  | | | | | | +-XKeysymToKeycode()
+  | | | | | | \-XFreeModifiermap()
+  | | | | | +-XUngrabButton()
+  | | | | | +-LENGTH()
+  | | | | | \-XGrabButton()
+  | | | | +-XSetWindowBorder()
+  | | | | +-XSetInputFocus()
+  | | | | \-XDeleteProperty()
+  | | | +-clearurgent() <void clearurgent (Client *c) at dwm.c:522>
+  | | | | +-XGetWMHints()
+  | | | | +-XSetWMHints()
+  | | | | \-XFree()
+  | | | +-detachstack() <void detachstack (Client *c) at dwm.c:683>
+  | | | | \-ISVISIBLE()
+  | | | +-attachstack() <void attachstack (Client *c) at dwm.c:422>
+  | | | +-grabbuttons() <void grabbuttons (Client *c, Bool focused) at dwm.c:996>
+  | | | | +-updatenumlockmask() <void updatenumlockmask (void) at dwm.c:1974>
+  | | | | | +-XGetModifierMapping()
+  | | | | | +-XKeysymToKeycode()
+  | | | | | \-XFreeModifiermap()
+  | | | | +-XUngrabButton()
+  | | | | +-LENGTH()
+  | | | | \-XGrabButton()
+  | | | +-XSetWindowBorder()
+  | | | +-setfocus() <void setfocus (Client *c) at dwm.c:1536>
+  | | | | +-XSetInputFocus()
+  | | | | +-XChangeProperty()
+  | | | | \-sendevent() <Bool sendevent (Client *c, Atom proto) at dwm.c:1512>
+  | | | |   +-XGetWMProtocols()
+  | | | |   +-XFree()
+  | | | |   \-XSendEvent()
+  | | | +-XSetInputFocus()
+  | | | +-XDeleteProperty()
+  | | | \-drawbars() <void drawbars (void) at dwm.c:771>
+  | | |   \-drawbar() <void drawbar (Monitor *m) at dwm.c:721>
+  | | |     +-LENGTH()
+  | | |     +-TEXTW()
+  | | |     +-drawtext() <void drawtext (const char *text, unsigned long col[ColLast], Bool invert) at dwm.c:791>
+  | | |     | +-XSetForeground()
+  | | |     | +-XFillRectangle()
+  | | |     | +-strlen()
+  | | |     | +-MIN()
+  | | |     | +-textnw() <int textnw (const char *text, unsigned int len) at dwm.c:1714>
+  | | |     | | +-XmbTextExtents()
+  | | |     | | \-XTextWidth()
+  | | |     | +-memcpy()
+  | | |     | +-XmbDrawString()
+  | | |     | \-XDrawString()
+  | | |     +-drawsquare() <void drawsquare (Bool filled, Bool empty, Bool invert, unsigned long col[ColLast]) at dwm.c:779>
+  | | |     | +-XSetForeground()
+  | | |     | +-XFillRectangle()
+  | | |     | \-XDrawRectangle()
+  | | |     +-XCopyArea()
+  | | |     \-XSync()
+  | | \-arrange() <void arrange (Monitor *m) at dwm.c:396> (R)
+  | |   +-showhide() <void showhide (Client *c) at dwm.c:1662> (R)
+  | |   | +-ISVISIBLE()
+  | |   | +-XMoveWindow()
+  | |   | +-arrange() <void arrange (Monitor *m) at dwm.c:396> (recursive: see 460)
+  | |   | +-resize() <void resize (Client *c, int x, int y, int w, int h, Bool interact) at dwm.c:1356> (R)
+  | |   | | +-applysizehints() <Bool applysizehints (Client *c, int *x, int *y, int *w, int *h, Bool interact) at dwm.c:330> (R)
+  | |   | | | +-MAX()
+  | |   | | | +-WIDTH()
+  | |   | | | +-HEIGHT()
+  | |   | | | +-arrange() <void arrange (Monitor *m) at dwm.c:396> (recursive: see 460)
+  | |   | | | \-MIN()
+  | |   | | \-resizeclient() <void resizeclient (Client *c, int x, int y, int w, int h) at dwm.c:1362>
+  | |   | |   +-XConfigureWindow()
+  | |   | |   +-configure() <void configure (Client *c) at dwm.c:555>
+  | |   | |   | \-XSendEvent()
+  | |   | |   \-XSync()
+  | |   | +-showhide() <void showhide (Client *c) at dwm.c:1662> (recursive: see 461)
+  | |   | \-WIDTH()
+  | |   +-arrangemon() <void arrangemon (Monitor *m) at dwm.c:409> (R)
+  | |   | +-strncpy()
+  | |   | \-arrange() <void arrange (Monitor *m) at dwm.c:396> (recursive: see 460)
+  | |   \-restack() <void restack (Monitor *m) at dwm.c:1429> (R)
+  | |     +-drawbar() <void drawbar (Monitor *m) at dwm.c:721>
+  | |     | +-LENGTH()
+  | |     | +-TEXTW()
+  | |     | +-drawtext() <void drawtext (const char *text, unsigned long col[ColLast], Bool invert) at dwm.c:791>
+  | |     | | +-XSetForeground()
+  | |     | | +-XFillRectangle()
+  | |     | | +-strlen()
+  | |     | | +-MIN()
+  | |     | | +-textnw() <int textnw (const char *text, unsigned int len) at dwm.c:1714>
+  | |     | | | +-XmbTextExtents()
+  | |     | | | \-XTextWidth()
+  | |     | | +-memcpy()
+  | |     | | +-XmbDrawString()
+  | |     | | \-XDrawString()
+  | |     | +-drawsquare() <void drawsquare (Bool filled, Bool empty, Bool invert, unsigned long col[ColLast]) at dwm.c:779>
+  | |     | | +-XSetForeground()
+  | |     | | +-XFillRectangle()
+  | |     | | \-XDrawRectangle()
+  | |     | +-XCopyArea()
+  | |     | \-XSync()
+  | |     +-arrange() <void arrange (Monitor *m) at dwm.c:396> (recursive: see 460)
+  | |     +-XRaiseWindow()
+  | |     +-ISVISIBLE()
+  | |     +-XConfigureWindow()
+  | |     +-XSync()
+  | |     \-XCheckMaskEvent()
+  | +-unmanage() <void unmanage (Client *c, Bool destroyed) at dwm.c:1809>
+  | | +-detach() <void detach (Client *c) at dwm.c:675>
+  | | +-detachstack() <void detachstack (Client *c) at dwm.c:683>
+  | | | \-ISVISIBLE()
+  | | +-XGrabServer()
+  | | +-XSetErrorHandler()
+  | | +-xerrordummy() <int xerrordummy (Display *dpy, XErrorEvent *ee) at dwm.c:2144>
+  | | +-XConfigureWindow()
+  | | +-XUngrabButton()
+  | | +-setclientstate() <void setclientstate (Client *c, long state) at dwm.c:1504>
+  | | | \-XChangeProperty()
+  | | +-XSync()
+  | | +-xerror() <int xerror (Display *dpy, XErrorEvent *ee) at dwm.c:2127>
+  | | | +-fprintf()
+  | | | \-xerrorxlib() <int (*xerrorxlib) (Display *, XErrorEvent *) at dwm.c:262>
+  | | +-XUngrabServer()
+  | | +-free()
+  | | +-focus() <void focus (Client *c) at dwm.c:846>
+  | | | +-ISVISIBLE()
+  | | | +-unfocus() <void unfocus (Client *c, Bool setfocus) at dwm.c:1797>
+  | | | | +-grabbuttons() <void grabbuttons (Client *c, Bool focused) at dwm.c:996>
+  | | | | | +-updatenumlockmask() <void updatenumlockmask (void) at dwm.c:1974>
+  | | | | | | +-XGetModifierMapping()
+  | | | | | | +-XKeysymToKeycode()
+  | | | | | | \-XFreeModifiermap()
+  | | | | | +-XUngrabButton()
+  | | | | | +-LENGTH()
+  | | | | | \-XGrabButton()
+  | | | | +-XSetWindowBorder()
+  | | | | +-XSetInputFocus()
+  | | | | \-XDeleteProperty()
+  | | | +-clearurgent() <void clearurgent (Client *c) at dwm.c:522>
+  | | | | +-XGetWMHints()
+  | | | | +-XSetWMHints()
+  | | | | \-XFree()
+  | | | +-detachstack() <void detachstack (Client *c) at dwm.c:683>
+  | | | | \-ISVISIBLE()
+  | | | +-attachstack() <void attachstack (Client *c) at dwm.c:422>
+  | | | +-grabbuttons() <void grabbuttons (Client *c, Bool focused) at dwm.c:996>
+  | | | | +-updatenumlockmask() <void updatenumlockmask (void) at dwm.c:1974>
+  | | | | | +-XGetModifierMapping()
+  | | | | | +-XKeysymToKeycode()
+  | | | | | \-XFreeModifiermap()
+  | | | | +-XUngrabButton()
+  | | | | +-LENGTH()
+  | | | | \-XGrabButton()
+  | | | +-XSetWindowBorder()
+  | | | +-setfocus() <void setfocus (Client *c) at dwm.c:1536>
+  | | | | +-XSetInputFocus()
+  | | | | +-XChangeProperty()
+  | | | | \-sendevent() <Bool sendevent (Client *c, Atom proto) at dwm.c:1512>
+  | | | |   +-XGetWMProtocols()
+  | | | |   +-XFree()
+  | | | |   \-XSendEvent()
+  | | | +-XSetInputFocus()
+  | | | +-XDeleteProperty()
+  | | | \-drawbars() <void drawbars (void) at dwm.c:771>
+  | | |   \-drawbar() <void drawbar (Monitor *m) at dwm.c:721>
+  | | |     +-LENGTH()
+  | | |     +-TEXTW()
+  | | |     +-drawtext() <void drawtext (const char *text, unsigned long col[ColLast], Bool invert) at dwm.c:791>
+  | | |     | +-XSetForeground()
+  | | |     | +-XFillRectangle()
+  | | |     | +-strlen()
+  | | |     | +-MIN()
+  | | |     | +-textnw() <int textnw (const char *text, unsigned int len) at dwm.c:1714>
+  | | |     | | +-XmbTextExtents()
+  | | |     | | \-XTextWidth()
+  | | |     | +-memcpy()
+  | | |     | +-XmbDrawString()
+  | | |     | \-XDrawString()
+  | | |     +-drawsquare() <void drawsquare (Bool filled, Bool empty, Bool invert, unsigned long col[ColLast]) at dwm.c:779>
+  | | |     | +-XSetForeground()
+  | | |     | +-XFillRectangle()
+  | | |     | \-XDrawRectangle()
+  | | |     +-XCopyArea()
+  | | |     \-XSync()
+  | | +-updateclientlist() <void updateclientlist () at dwm.c:1879>
+  | | | +-XDeleteProperty()
+  | | | \-XChangeProperty()
+  | | \-arrange() <void arrange (Monitor *m) at dwm.c:396> (R)
+  | |   +-showhide() <void showhide (Client *c) at dwm.c:1662> (R)
+  | |   | +-ISVISIBLE()
+  | |   | +-XMoveWindow()
+  | |   | +-arrange() <void arrange (Monitor *m) at dwm.c:396> (recursive: see 589)
+  | |   | +-resize() <void resize (Client *c, int x, int y, int w, int h, Bool interact) at dwm.c:1356> (R)
+  | |   | | +-applysizehints() <Bool applysizehints (Client *c, int *x, int *y, int *w, int *h, Bool interact) at dwm.c:330> (R)
+  | |   | | | +-MAX()
+  | |   | | | +-WIDTH()
+  | |   | | | +-HEIGHT()
+  | |   | | | +-arrange() <void arrange (Monitor *m) at dwm.c:396> (recursive: see 589)
+  | |   | | | \-MIN()
+  | |   | | \-resizeclient() <void resizeclient (Client *c, int x, int y, int w, int h) at dwm.c:1362>
+  | |   | |   +-XConfigureWindow()
+  | |   | |   +-configure() <void configure (Client *c) at dwm.c:555>
+  | |   | |   | \-XSendEvent()
+  | |   | |   \-XSync()
+  | |   | +-showhide() <void showhide (Client *c) at dwm.c:1662> (recursive: see 590)
+  | |   | \-WIDTH()
+  | |   +-arrangemon() <void arrangemon (Monitor *m) at dwm.c:409> (R)
+  | |   | +-strncpy()
+  | |   | \-arrange() <void arrange (Monitor *m) at dwm.c:396> (recursive: see 589)
+  | |   \-restack() <void restack (Monitor *m) at dwm.c:1429> (R)
+  | |     +-drawbar() <void drawbar (Monitor *m) at dwm.c:721>
+  | |     | +-LENGTH()
+  | |     | +-TEXTW()
+  | |     | +-drawtext() <void drawtext (const char *text, unsigned long col[ColLast], Bool invert) at dwm.c:791>
+  | |     | | +-XSetForeground()
+  | |     | | +-XFillRectangle()
+  | |     | | +-strlen()
+  | |     | | +-MIN()
+  | |     | | +-textnw() <int textnw (const char *text, unsigned int len) at dwm.c:1714>
+  | |     | | | +-XmbTextExtents()
+  | |     | | | \-XTextWidth()
+  | |     | | +-memcpy()
+  | |     | | +-XmbDrawString()
+  | |     | | \-XDrawString()
+  | |     | +-drawsquare() <void drawsquare (Bool filled, Bool empty, Bool invert, unsigned long col[ColLast]) at dwm.c:779>
+  | |     | | +-XSetForeground()
+  | |     | | +-XFillRectangle()
+  | |     | | \-XDrawRectangle()
+  | |     | +-XCopyArea()
+  | |     | \-XSync()
+  | |     +-arrange() <void arrange (Monitor *m) at dwm.c:396> (recursive: see 589)
+  | |     +-XRaiseWindow()
+  | |     +-ISVISIBLE()
+  | |     +-XConfigureWindow()
+  | |     +-XSync()
+  | |     \-XCheckMaskEvent()
+  | +-XFreeFontSet()
+  | +-XFreeFont()
+  | +-XUngrabKey()
+  | +-XFreePixmap()
+  | +-XFreeGC()
+  | +-XFreeCursor()
+  | +-cleanupmon() <void cleanupmon (Monitor *mon) at dwm.c:507>
+  | | +-XUnmapWindow()
+  | | +-XDestroyWindow()
+  | | \-free()
+  | +-XSync()
+  | +-XSetInputFocus()
+  | \-XDeleteProperty()
+  \-XCloseDisplay()
